@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' />
+  <script src="{% static 'jquery.min.js' %}"></script>
+  <script src="{% static 'css/bootstrap.min.js' %}"></script>
+  <script src="{% static 'css/popper.min.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'available_stock' %}">Available stock</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'a_purchase' %}">Purchase</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'a_sales' %}">Sales</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'a_contact' %}">Contact</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'add_product' %}">Add Product</a>
+          </li>
+          <!-- <li class="nav-item"> -->
+          <!-- </li> -->
+        </ul>
+        <a class="btn btn-danger" style="margin-left: 1150px;"  href="{% url 'a_logout' %}">Logout</a>
+
+        <!-- Navbar text-->
+        <!-- <span class="navbar-text">
+          Navbar text
+        </span> -->
+      </nav>
+      <br>
+      
+      <div class="container">
+        
+      </div>
+      
+      </body>
+      </html>
+      
+      
+      

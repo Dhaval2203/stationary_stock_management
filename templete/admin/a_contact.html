@@ -1,0 +1,41 @@
+{% load static %}
+{% block header %}
+{% include "admin/header.html" %}
+{% endblock %}
+<head>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' />
+</head>
+<div class="container table-responsive">
+	<h2 class="heading text-capitalize mb-sm-5 mb-4">Contact Us</h2>
+		<div class="mail_grid_w3l">
+				<table class="table table-borderless table table-hover" >
+					<thead class="thead-dark">
+						<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Phone No</th>
+						<th>Subject</th>
+						<th>Massage</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				{% for cons in con %}   
+				<tr>
+					<td>{{cons.c_id}}</td>
+					<td>{{cons.c_name}}</td>
+					<td>{{cons.c_email}}</td>
+					<td>{{cons.c_phoneno}}</td>
+					<td>{{cons.c_subject}}</td>
+					<td>{{cons.c_massage}}</td>
+					<td>
+						<form action="{% url 'del_contact' %}" method="GET" >
+							<button type="submit" value='{{ cons.c_id }}' name='pk' class="btn btn-danger">Delete</button>
+						</form>
+					</td>
+				</tr><br>
+				{%endfor%}
+			</table>
+			</div>
+	</div>	
+

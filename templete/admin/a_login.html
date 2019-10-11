@@ -1,0 +1,51 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+	<title>Admin Login Page</title>
+	<!-- Meta-Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Particles Login Form Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta-Tags -->
+	<!-- Stylesheets -->
+	<link href="{% static 'cssl/style.css' %}" rel='stylesheet' type='text/css' />
+	<!-- online fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Amiri:400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+		<div class="w3ls-pos">
+				<h1>Login Here</h1>
+				<div class="w3ls-login box">
+		<form action="{% url 'a_login' %}" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div id="particles-js"></div>
+			<div class="w3ls-login">
+				<input type="email" name="email" placeholder="Enter Email Address"><br>
+			</div>
+			<div class="agile-field-txt">
+				<input type="password" name="password" placeholder="Password"><br>
+			</div>
+			<div class="w3ls-bot">
+				<button name="login" type="submit">Login</button>
+				<!-- <input type="submit" name="submit"> -->
+			</div><br><br><br>
+		</form>
+		
+	</div>
+</div>
+	</body>
+</html>

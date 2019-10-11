@@ -1,0 +1,86 @@
+{% load static  %}
+
+				{% block header %}
+				{% include "header.html" %}
+				{%  endblock %}
+ 
+<div class="inner-page-banner" id="home"> 	   
+	<!--Header-->
+</div>
+<!-- //banner --> 
+
+<!-- contact -->
+<div class="container table-responsive mail_grid_w3l">
+    <br><br>
+    <table class="table table-borderless table table-hover">
+        <thead class="thead-dark">
+            <tr class="table table-striped">
+                <th>Product Name</th>
+                <th>Product Category</th>
+				<th>Product Company</th>
+				<th>Image</th>
+				<th>Product Price</th> 
+				<th>Add To cart</th> 
+			</tr>
+			{% for c in cart %}   
+			<tr  class="table table-striped" style="color:black; font-size: 20px; font-family: Calibri;">
+			  <td>{{c.p_name}}</td>
+			  <td>{{c.p_category}}</td>
+			  <td>{{c.p_company}}</td>
+			  <td><img src="{{c.p_img.url}}" height="300" width="300"></td>
+			  <td>{{c.price}}</td>
+			  <td><button class="btn-primary">Add to Cart</button></td>
+			</tr><br>
+        {%endfor%}
+        </thead>
+    </table>
+</div>
+
+<!-- footer -->
+	{% block footer %}
+	{% include "footer.html" %}
+	{%  endblock %}
+<!-- footer -->
+
+<!-- js-scripts -->		
+
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+	
+<!-- //js-scripts -->
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+{% block header %}
+{% include "admin/header.html" %}
+{% endblock %}
+<head>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' />
+</head>
+<form action="{% url 'a_sales' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="container">
+        <div class="col-lg-8">
+        </div>
+        <div class="col-lg-5">
+            <div>
+                <h1>Sales</h1>
+            </div>
+       
+<div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <select class="form-control select2" name="p_category">
+                    <option value="Pen">Pen</option>
+                    <option  value="Pencil">Pencil</option>
+                    <option value="Colour">Colour</option>
+                    <option value="Drawing">Drawing</option>
+                </select>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <select class="form-control select2" name="p_company">
+                    <option value="Navneet">Navneet</option>
+                    <option value="Camlin">Camlin</option>
+                    <option value="Natraj">Natraj</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input type="number" class="form-control" name="stock" placeholder="Enter Number of  availabe Stock" required="">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" name='Sales'>Sales</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+ </form>   

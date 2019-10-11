@@ -1,0 +1,71 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+	<title>Login Page</title>
+	<!-- Meta-Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Particles Login Form Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta-Tags -->
+	<!-- Stylesheets -->
+	<link href="{% static 'cssl/style.css' %}" rel='stylesheet' type='text/css' />
+	<!-- online fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Amiri:400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+		<div class="w3ls-pos">
+				<h1>Login Here</h1>
+				<div class="w3ls-login box">
+		<form action="/login/" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div id="particles-js"></div>
+			<div class="w3ls-login">
+				<input type="text" name="username" placeholder="User Name"><br>
+			</div>
+			<div class="agile-field-txt">
+				<input type="password" name="password1" placeholder="Password"><br>
+			</div>
+			<div class="w3ls-bot">
+				<input type="submit">
+			</div><br><br><br>
+			<div class="border-top pt-3" >
+				<span style="font-size: 25px;text-align: center">
+					<small class="text-muted">	
+						<a href="{% url 'register' %}" style="color: white;">Not have an accout? Register Here..</a>
+					</small>
+				</span>
+			</div>
+			<div class="border-top pt-3" >
+				<span style="font-size: 25px;text-align: center">
+					<small class="text-muted">	
+						<a href="{% url 'forget_password' %}" style="color: white;">Forget Password???</a>
+					</small><br>
+					<small class="text-muted">
+							<a href="{% url 'change_password' %}" style="color: white;">Change Password???</a>
+					</small>
+				</span>
+			</div>
+		</form>
+		<div>
+			{% for message in messages %}
+				<h1>{{message}}</h1>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+	</body>
+</html>
